@@ -58,12 +58,12 @@ export const burger = {
   category: "Lunch", 
   discount: function (discountType){
     if (discountType === 'student' || discountType === 'teacher'){
-      this.price = this.price * 0.75;
-      return this.price;
+      let price = this.price * 0.75;
+      return price;
     }
     else if (discountType === 'public'){
-      this.price = this.price * 0.9;
-      return this.price;
+      let price = this.price * 0.9;
+      return price;
     }
   }
 }
@@ -88,6 +88,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
+console.log( reviews[5].feedback );
 
 
 
@@ -96,7 +97,8 @@ Using the reviews array above do the following: (no function needed)
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
-
+reviews.push('Stacy', 4.5, 'Attentive waiters.');
+console.log(reviews);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -105,8 +107,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-
-
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
+console.log(reviews);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -119,13 +121,12 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(review, number) {
+  let name = this.name;
+  number = reviews[number];
+  return '`${name} gave the restaurant a ${rating} star review, and their feedback was: ${feedback}`';
 }
 
-
-  
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -139,10 +140,10 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(reviews) {
+ // return reviews.length - 1;
 } 
-
+getLastReview();
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
