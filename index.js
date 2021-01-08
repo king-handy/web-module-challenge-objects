@@ -121,10 +121,9 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-function getReviewByIndex(review, number) {
-  let name = this.name;
-  number = reviews[number];
-  return '`${name} gave the restaurant a ${rating} star review, and their feedback was: ${feedback}`';
+function getReviewByIndex(reviews, index) {
+  let review = reviews[index];
+  return `${review.name} gave the restaurant a ${review.rating} star review, and their feedback was: ${review.feedback}`;
 }
 
 
@@ -141,9 +140,10 @@ Use the getLastReview function below to do the following:
 
 
 function getLastReview(reviews) {
- // return reviews.length - 1;
+  let last = reviews.pop();
+  return `${last.name} gave the restaurant a ${last.rating} star review, and their feedback was: ${last.feedback}`;
 } 
-getLastReview();
+getLastReview(reviews);
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
