@@ -15,9 +15,14 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
-}
+function createMenuItem(name, price, category){
+    const tacos = {
+      name: name,
+      price: price,
+      category: category,
+    };
+    return tacos;  
+} 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -28,8 +33,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
-
+createMenuItem('Pizza', 6, 'Lunch');
+createMenuItem('Stir Fry', 9, 'Dinner');
+createMenuItem('Scrambled Eggs', 6, 'Breakfast');
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -48,9 +54,19 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount: function(discountType){
+    if (discountType === 'teacher' || discountType === 'student'){
+      let price = this.price * 0.75;
+      return price;
+    } 
+    else if (discountType === 'public'){
+      let price = this.price * 0.9;
+      return price;
+    }
+  }
 }
-
+console.log(burger.discount('teacher'));
+console.log(burger.discount('public'));
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -69,7 +85,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+// console.log(reviews.);
 
 
 
